@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Research Works – Manish Raj Aryal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Research projects by Manish Raj Aryal in AI, digital manufacturing, human–AI collaboration, and immersive AR/VR." />
+
+  <style>
+    /* ===== Base ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #333;
+      background-color: #f7f7f7;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 2.8rem 0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      color: #0c5e8a;
+      text-align: left;
+    }
+
+    .section-intro {
+      font-size: 0.98rem;
+      color: #444;
+      margin-bottom: 2.2rem;
+    }
+
+    /* ===== Header & Nav (same as other pages) ===== */
+    header.site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e3e3e3;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo a {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #222;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .nav-list > li > a {
+      font-size: 0.95rem;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-list > li > a:hover,
+    .nav-list > li > a.active {
+      border-bottom-color: #226e93;
+      color: #226e93;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a::after {
+      content: " ▾";
+      font-size: 0.8rem;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      min-width: 240px;
+      background: #ffffff;
+      border: 1px solid #e3e3e3;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      list-style: none;
+      padding: 0.4rem 0;
+      display: none;
+      z-index: 200;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f1f6f9;
+      color: #226e93;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* ===== Research cards (text + side image) ===== */
+
+    .research-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+
+    .research-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+      padding: 1.8rem 2rem;
+    }
+
+    .research-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.1fr);
+      gap: 2.1rem;
+      align-items: center;
+    }
+
+    .research-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8a98a6;
+      margin-bottom: 0.4rem;
+    }
+
+    .research-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #102336;
+      margin-bottom: 0.8rem;
+    }
+
+    .research-summary {
+      font-size: 0.98rem;
+      color: #45505c;
+      margin-bottom: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .research-bullets {
+      list-style: disc;
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .research-bullets li + li {
+      margin-top: 0.25rem;
+    }
+
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.2rem;
+    }
+
+    .research-tag {
+      font-size: 0.8rem;
+      padding: 0.18rem 0.75rem;
+      border-radius: 999px;
+      background: #edf3f7;
+      color: #335a7a;
+      font-weight: 500;
+    }
+
+    .research-image-wrap {
+      width: 100%;
+      justify-self: center;
+    }
+
+    .research-image {
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid #e3e3e3;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      background: #ffffff;
+      margin-top: 2rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .research-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .research-image-wrap {
+        order: -1; /* put image on top on mobile if you like; remove if not */
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-list {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: flex-end;
+        font-size: 0.9rem;
+      }
+
+      .research-card {
+        padding: 1.4rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header / Navigation ===== -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <div class="logo">
+        <a href="index.html">Manish Raj Aryal</a>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="research.html" class="active">Research Works</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="honors.html">Honors and Awards</a></li>
+          <li class="dropdown">
+            <a href="Data Visualization Projects.html">Data Visualization Projects</a>
+            <ul class="dropdown-menu">
+              <li><a href="Project 1 Exoplanet Archive - NASA.html">Project 1: Exoplanet Archive – NASA</a></li>
+              <li><a href="Project 2 311 calls in Cincinnati.html">Project 2: 311 Calls in Cincinnati</a></li>
+              <li><a href="Project 3 TV Time.html">Project 3: TV Time</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Research Works</h2>
+
+        <p class="section-intro">
+          My work bridges AI, graph learning, digital twins, and immersive interfaces for
+          intelligent manufacturing and human–AI collaboration. Below are selected projects
+          with concept visuals that summarize each research direction.
+        </p>
+
+        <div class="research-stack">
+
+          <!-- ========= Research Work 01 ========= -->
+          <article class="research-card">
+            <div class="research-layout">
+              <!-- LEFT: text -->
+              <div>
+                <div class="research-label">Research Work 01</div>
+                <h3 class="research-title">GNN–LLM Hybrid Digital Twin</h3>
+                <p class="research-summary">
+                  AI-guided framework for capturing tacit press brake tuning knowledge using
+                  graph neural networks and agentic LLMs integrated with a digital twin.
+                </p>
+                <ul class="research-bullets">
+                  <li>Node-level tuning prediction from machine parameter graphs.</li>
+                  <li>LLM agents generate human-interpretable “why” explanations for each setting.</li>
+                  <li>Supports operator training, parameter what-if analysis, and policy-constrained tuning.</li>
+                <li>GNN Prediction Accuracy (F1 Score)= 75% & LLM-Explanation-Relevance = 1-3 stage reduction in parameter tune process</li
+				<br>
+				</ul>
+                <div class="research-tags">
+                  <span class="research-tag">GNN</span>
+                  <span class="research-tag">LLM Agents</span>
+                  <span class="research-tag">Digital Twin</span>
+                  <span class="research-tag">Smart Manufacturing</span>
+                </div>
+              </div>
+
+              <!-- RIGHT: image -->
+              <div class="research-image-wrap">
+                <!-- 🔁 replace src with your actual image path -->
+                <img
+                  src="research/gnn_llm_hybrid_digital_twin.png"
+                  alt="Diagram of GNN–LLM hybrid digital twin for press brake tuning"
+                  class="research-image"
+                />
+              </div>
+            </div>
+          </article>
+
+          <!-- ========= Research Work 02 ========= -->
+          <article class="research-card">
+            <div class="research-layout">
+              <div>
+                <div class="research-label">Research Work 02</div>
+                <h3 class="research-title">AI-Assisted Heat Exchanger Design Using GANs</h3>
+                <p class="research-summary">
+                  Generative topology optimization framework for organic heat exchanger
+                  geometries that balance thermal performance with additive manufacturing constraints.
+                </p>
+                <ul class="research-bullets">
+                  <li>GAN-based shape synthesis conditioned on flow, pressure drop, and DfAM limits.</li>
+                  <li>HPC-backed evaluation pipeline reducing design iteration time from days to hours.</li>
+                  <li>Enables rapid ideation and verification of intricate, high-efficiency thermal components.</li>
+                </ul>
+                <div class="research-tags">
+                  <span class="research-tag">GANs</span>
+                  <span class="research-tag">Topology Optimization</span>
+                  <span class="research-tag">Heat Exchangers</span>
+                  <span class="research-tag">Additive Manufacturing</span>
+                </div>
+              </div>
+
+              <div class="research-image-wrap">
+                <img
+                  src="research/ai_hx_design_gan.png"
+                  alt="Concept visual of AI-assisted heat exchanger optimization"
+                  class="research-image"
+                />
+              </div>
+            </div>
+          </article>
+
+          <!-- ========= Research Work 03 ========= -->
+          <article class="research-card">
+            <div class="research-layout">
+              <div>
+                <div class="research-label">Research Work 03</div>
+                <h3 class="research-title">artCAN AI: Generative Art Therapy with Multimodal LLMs</h3>
+                <p class="research-summary">
+                  Multimodal co-creation platform that combines language models, image generation,
+                  and interactive UI for art therapy and creative exploration.
+                </p>
+                <ul class="research-bullets">
+                  <li>Users describe emotions or scenes via text/voice; system generates personalized artwork.</li>
+                  <li>Pipeline integrates diffusion models with task-specialized LLM prompts and safety filters.</li>
+                  <li>Designed with clinicians to support reflective practice in digital and immersive settings.</li>
+                </ul>
+                <div class="research-tags">
+                  <span class="research-tag">Multimodal LLMs</span>
+                  <span class="research-tag">Diffusion Models</span>
+                  <span class="research-tag">Art Therapy</span>
+                  <span class="research-tag">Human–AI Co-Creation</span>
+                </div>
+              </div>
+
+              <div class="research-image-wrap">
+                <img
+                  src="research/artcan_ai_multimodal.png"
+                  alt="artCAN AI multimodal co-creation interface"
+                  class="research-image"
+                />
+              </div>
+            </div>
+          </article>
+
+          <!-- === Add more research cards here if you want === -->
+		  
+		  <!-- ========= Research Work 04 ========= -->
+<article class="research-card">
+  <div class="research-layout">
+    <div>
+      <div class="research-label">Research Work 04</div>
+      <h3 class="research-title">Digital Twin + LLM Integration for Smart & Legacy Factories</h3>
+
+      <p class="research-summary">
+        Low-latency IIoT framework that unifies data access across new and legacy industrial machines.
+        Combined with a multi-agent LLM trained using RAG and RLHF, the system performs real-time
+        task classification and automated maintenance actions.
+      </p>
+
+      <ul class="research-bullets">
+        <li>1.3-second IIoT → cloud → model round-trip latency.</li>
+        <li>82% task-classification accuracy and 92% reproducibility across operators.</li>
+        <li>Supports predictive maintenance and cross-machine interoperability.</li>
+      </ul>
+
+      <div class="research-tags">
+        <span class="research-tag">Digital Twin</span>
+        <span class="research-tag">IIoT</span>
+        <span class="research-tag">LLM Agents</span>
+        <span class="research-tag">RAG</span>
+        <span class="research-tag">RLHF</span>
+      </div>
+    </div>
+
+    <div class="research-image-wrap">
+      <img
+        src="research/dt_llm_integration.png"
+        alt="Digital twin and LLM integration diagram"
+        class="research-image"
+      />
+    </div>
+  </div>
+</article>
+
+<!-- ========= Research Work 05 ========= -->
+<article class="research-card">
+  <div class="research-layout">
+    <div>
+      <div class="research-label">Research Work 05</div>
+      <h3 class="research-title">AR-Enhanced Deep Learning for Component Recognition</h3>
+
+      <p class="research-summary">
+        Automated Blender-based pipeline for generating 4K synthetic images and segmentation masks used
+        to train an AR part-recognition system for assembly operations. The workflow significantly reduced
+        real-world data collection overhead.
+      </p>
+
+      <ul class="research-bullets">
+        <li>Full synthetic dataset generator producing 4K renders + pixel-accurate masks.</li>
+        <li>YOLO-powered AR tool for assembly part recognition.</li>
+        <li>Foundation for a 2025 UC-approved invention disclosure.</li>
+      </ul>
+
+      <div class="research-tags">
+        <span class="research-tag">Synthetic Data</span>
+        <span class="research-tag">Augmented Reality</span>
+        <span class="research-tag">YOLO</span>
+        <span class="research-tag">Blender Automation</span>
+      </div>
+    </div>
+
+    <div class="research-image-wrap">
+      <img
+        src="research/ar_component_recognition.png"
+        alt="AR component recognition workflow"
+        class="research-image"
+      />
+    </div>
+  </div>
+</article>
+
+
+<!-- ========= Research Work 06 ========= -->
+<article class="research-card">
+  <div class="research-layout">
+    <div>
+      <div class="research-label">Research Work 06</div>
+      <h3 class="research-title">ImVR: Virtual Twin Visualization of Intricate 3D Geometries</h3>
+
+      <p class="research-summary">
+        Immersive VR platform for real-time exploration of digital twins, simulation results, and
+        FEA data. Integrated with a GPT-3.5-Turbo-based assistant capable of answering engineering
+        queries with strong accuracy across multiple domains.
+      </p>
+
+      <ul class="research-bullets">
+        <li>High-fidelity VR visualization of simulation and twin geometry.</li>
+        <li>GPT-powered engineering assistant with 75% domain-accurate responses.</li>
+        <li>Bridges HPC computation with intuitive VR interaction for design engineers.</li>
+      </ul>
+
+      <div class="research-tags">
+        <span class="research-tag">VR</span>
+        <span class="research-tag">Digital Twin</span>
+        <span class="research-tag">GPT-3.5</span>
+        <span class="research-tag">FEA Visualization</span>
+      </div>
+    </div>
+
+    <div class="research-image-wrap">
+      <img
+        src="research/imvr_platform.png"
+        alt="VR digital twin visualization platform"
+        class="research-image"
+      />
+    </div>
+  </div>
+</article>
+
+
+<!-- ========= Research Work 07 ========= -->
+<article class="research-card">
+  <div class="research-layout">
+    <div>
+      <div class="research-label">Research Work 07</div>
+      <h3 class="research-title">Automated Design of Cranial Implants from CT/MRI Scans</h3>
+
+      <p class="research-summary">
+        Open-source medical design framework that automatically reconstructs patient-specific cranial
+        implants from CT/MRI scans. Developed in collaboration with neurosurgeons to reduce design time
+        and improve accessibility worldwide.
+      </p>
+
+      <ul class="research-bullets">
+        <li>3D feature extraction + defect segmentation for skull reconstruction.</li>
+        <li>Reduced manual design time from 24 hours → 3 minutes.</li>
+        <li>Published in <em>Acta Neurochirurgica</em>, 2023.</li>
+      </ul>
+
+      <div class="research-tags">
+        <span class="research-tag">Medical Imaging</span>
+        <span class="research-tag">3D Reconstruction</span>
+        <span class="research-tag">Cranial Implant Design</span>
+        <span class="research-tag">Open-Source Software</span>
+      </div>
+    </div>
+
+    <div class="research-image-wrap">
+      <img
+        src="research/cranial_implant_design.png"
+        alt="Automated cranial implant reconstruction"
+        class="research-image"
+      />
+    </div>
+  </div>
+</article>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    © <span id="year"></span> Manish Raj Aryal. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

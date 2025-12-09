@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Honors & Awards – Manish Raj Aryal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Honors, awards, scholarships, and fellowships received by Manish Raj Aryal." />
+
+  <style>
+    /* ===== Base ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #333;
+      background-color: #f7f7f7;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 2.8rem 0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      color: #0c5e8a;
+      text-align: left;
+    }
+
+    .section-intro {
+      font-size: 0.98rem;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+
+    /* ===== Header & Nav (same as other pages) ===== */
+    header.site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e3e3e3;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo a {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #222;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .nav-list > li > a {
+      font-size: 0.95rem;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-list > li > a:hover,
+    .nav-list > li > a.active {
+      border-bottom-color: #226e93;
+      color: #226e93;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a::after {
+      content: " ▾";
+      font-size: 0.8rem;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      min-width: 240px;
+      background: #ffffff;
+      border: 1px solid #e3e3e3;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      list-style: none;
+      padding: 0.4rem 0;
+      display: none;
+      z-index: 200;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f1f6f9;
+      color: #226e93;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* ===== Honors/Awards Grid (like second image) ===== */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.8rem 2rem;
+      align-items: stretch;
+    }
+
+
+
+    .award-logo {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 0.9rem;
+      object-fit: contain;
+    }
+
+    .award-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.25rem;
+    }
+
+    .award-org {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.25rem;
+    }
+
+    .award-year {
+      font-size: 0.86rem;
+      color: #999;
+      margin-bottom: 0.6rem;
+    }
+
+
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid #e3e3e3;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      background: #ffffff;
+      margin-top: 2rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 560px) {
+      .nav-list {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: flex-end;
+        font-size: 0.9rem;
+      }
+
+      .award-card {
+        padding: 1.2rem 1.1rem 1.4rem;
+      }
+    }
+	
+	
+	.award-header {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  height: 110px; /* You can adjust this */
+	  margin-bottom: 0.8rem;
+	  text-align: center;
+	}
+
+	.award-org-topline {
+	  font-size: 0.9rem;
+	  color: #444;
+	  margin-top: 0.3rem;
+	  line-height: 1.2;
+	}
+	/* Collapse long award descriptions by default */
+	.award-desc {
+	  font-size: 0.9rem;
+	  color: #444;
+	  margin-top: 0.4rem;
+	  display: none;           /* hidden initially */
+	}
+
+	/* When card is expanded, show the description */
+	/* Card layout */
+	.award-card {
+	  background: #ffffff;
+	  border-radius: 12px;
+	  padding: 1.4rem 1.4rem 1.6rem;
+	  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  text-align: center;
+	  height: 520px;          /* 🔥 all cards same height */
+	}
+
+	/* Header (logo area) stays as you already had */
+	.award-header {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  height: 110px;
+	  margin-bottom: 0.8rem;
+	  text-align: center;
+	}
+
+	.award-org-topline {
+	  font-size: 0.9rem;
+	  color: #444;
+	  margin-top: 0.3rem;
+	  line-height: 1.2;
+	}
+
+	/* Title / org / year spacing */
+	.award-title {
+	  font-size: 1rem;
+	  font-weight: 600;
+	  color: #111;
+	  margin-bottom: 0.25rem;
+	}
+
+	.award-org {
+	  font-size: 0.9rem;
+	  color: #666;
+	  margin-bottom: 0.25rem;
+	}
+
+	.award-year {
+	  font-size: 0.86rem;
+	  color: #999;
+	  margin-bottom: 0.6rem;
+	}
+
+	/* Description: hidden by default, fixed max-height when open */
+	.award-desc {
+	  font-size: 0.9rem;
+	  color: #444;
+	  margin-top: 0.4rem;
+	  display: none;          /* hidden initially */
+	  max-height: 260px;      /* 🔥 description area height */
+	  overflow-y: auto;       /* scroll inside if text is longer */
+	}
+
+	/* When card is expanded, show the description */
+	.award-card.expanded .award-desc {
+	  display: block;
+	}
+
+	/* Read more / show less button */
+	.award-toggle {
+	  margin-top: 0.5rem;
+	  font-size: 0.86rem;
+	  font-weight: 600;
+	  color: #226e93;
+	  background: none;
+	  border: none;
+	  cursor: pointer;
+	  padding: 0;
+	}
+
+	.award-toggle:hover {
+	  color: #174e6c;
+	}
+
+	.award-toggle:focus {
+	  outline: none;
+	}
+
+
+
+
+	.award-toggle:hover {
+	  color: #174e6c;
+	}
+
+	.award-toggle:focus {
+	  outline: none;
+	}
+
+
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header / Navigation ===== -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <div class="logo">
+        <a href="index.html">Manish Raj Aryal</a>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="research.html">Research Works</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="honors.html" class="active">Honors and Awards</a></li>
+          <li class="dropdown">
+            <a href="Data Visualization Projects.html">Data Visualization Projects</a>
+            <ul class="dropdown-menu">
+              <li><a href="Project 1 Exoplanet Archive - NASA.html">Project 1: Exoplanet Archive – NASA</a></li>
+              <li><a href="Project 2 311 calls in Cincinnati.html">Project 2: 311 Calls in Cincinnati</a></li>
+              <li><a href="Project 3 TV Time.html">Project 3: TV Time</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Honors and Awards</h2>
+        <p class="section-intro">
+          A selection of scholarships, fellowships, and awards recognizing academic excellence,
+          research contributions, leadership, and community impact.
+        </p>
+
+        <!-- ===== Awards Grid ===== -->
+        <div class="awards-grid">
+          <!-- 1 -->
+		<div class="award-card">
+		  <div class="award-header">
+			<img src="honors/b54ecac55ac607b9c3ddf0b01ac0595f.jpg" alt="University of Cincinnati logo" class="award-logo" />
+		  </div>
+
+		  <div class="award-title">Snodgrass Memorial Scholarship</div>
+		   <div class="award-org"> University of Cincinnati</div>
+		  <div class="award-year">Aug 2024</div>
+
+		  <!-- Full description stays here, but is hidden until expanded -->
+		  <p class="award-desc">
+				
+The Fenton D. Snodgrass Memorial Scholarship, valued at $2,000, has been awarded to a student at the University of Cincinnati in recognition of outstanding research achievements, dedication, and academic excellence. This scholarship is presented to students who demonstrate a commitment to advancing knowledge in their field and exemplify perseverance in their educational pursuits. The award aims to encourage continued scholarly efforts and support the recipient's future academic endeavors.
+		  </p>
+
+		  <!-- Toggle button -->
+		  <button type="button" class="award-toggle">Read more</button>
+		</div>
+
+
+          <!-- 2 -->
+		<div class="award-card">
+		  <div class="award-header">
+			<img src="honors/afd0273cd03ec1a0a826078eed5f9459.jpg" alt="University of Cincinnati logo" class="award-logo" />
+		  </div>
+
+		  <div class="award-title">Graduate Student Engineer of the Month</div>
+		  <div class="award-org">College of Engineering and Applied Sciences at University of Cincinnati</div>
+		  <div class="award-year">Jun 2024</div>
+
+		  <!-- Full description stays here, but is hidden until expanded -->
+		  <p class="award-desc">
+Recognized for exceptional research, professional excellence, and community impact. This award honors a standout graduate student who’s made significant strides in engineering, both in the lab and beyond.
+		  </p>
+
+		  <!-- Toggle button -->
+		  <button type="button" class="award-toggle">Read more</button>
+		</div>
+
+
+          <!-- 3 -->
+		 <div class="award-card">
+		  <div class="award-header">
+			<img src="honors/afd0273cd03ec1a0a826078eed5f9459.jpg" class="award-logo" alt="UC logo">
+		  </div>
+
+		  <div class="award-title">Professor Kirti “Karman” Ghia Endowed Graduate Student Scholarship</div>
+		  <div class="award-org">College of Engineering and Applied Sciences at University of Cincinnati</div>
+		  <div class="award-year">Mar 2024</div>
+
+		  <!-- Full description stays here, but is hidden until expanded -->
+		  <p class="award-desc">
+		  The Kirti Ghia Endowed Scholarship, awarded to outstanding graduate students in aerospace and mechanical engineering, honors the legacy of Professor Kirti “Karman” Ghia, a pioneering figure in fluid dynamics at the University of Cincinnati .The scholarship, established by his family and the university, provides vital support to best international graduate students providing support for their research work.
+		  </p>
+
+
+		  <!-- Toggle button -->
+		  <button type="button" class="award-toggle">Read more</button>
+		</div>
+
+
+          <!-- 4 -->
+		 <div class="award-card">
+		  <div class="award-header">
+			<img src="honors/799668e3fe8de694570e4ee3e8269fea.jpg" class="award-logo" alt="UC logo">
+		  </div>
+
+		  <div class="award-title">Graduate Research Fellowship Award</div>
+		  <div class="award-org">Graduate Student Governance at University of Cincinnati</div>
+		  <div class="award-year">Apr 2024</div>
+
+		  <!-- Full description stays here, but is hidden until expanded -->
+		  <p class="award-desc">
+		  Graduate Research Fellowship Award is awarded to individuals demoWnstrating exceptional research potential and academic excellence. This fellowship provides crucial support for innovative research endeavors, enabling graduate research students to contribute significantly to advancing knowledge and driving impactful discoveries in their field.
+		  </p>
+
+
+		  <!-- Toggle button -->
+		  <button type="button" class="award-toggle">Read more</button>
+		</div>
+
+
+          <!-- 5 -->
+		 <div class="award-card">
+		  <div class="award-header">
+			<img src="honors/dcefcb430235de7036dc5e95b5dec2b8.jpg" class="award-logo" alt="UC logo">
+		  </div>
+
+		  <div class="award-title">IRiS Graduate Research Fellowship </div>
+		  <div class="award-org">Institute for Research in Sensing (IRiS) at University of Cincinnati</div>
+		  <div class="award-year">Aug 2023</div>
+
+		  <!-- Full description stays here, but is hidden until expanded -->
+		  <p class="award-desc">
+		  The IRiS Graduate Research Fellowship was awarded for a project focused on advancing collaborative sensing research through a unique interdisciplinary approach. This fellowship emphasized the integration of STEM and non-STEM disciplines, encouraging the development of innovative solutions to challenges related to sensing and perception. The project involved deep engagement with the creative process, fostering unconventional research collaborations that transcended traditional disciplinary boundaries. By focusing on the sensing lifecycle, the fellowship produced socially and ethically engaged researchers equipped with core competencies in teamwork, communication, and problem-solving, ultimately leading to transformative advancements in the field. 
+		  </p>
+
+
+		  <!-- Toggle button -->
+		  <button type="button" class="award-toggle">Read more</button>
+		</div>
+
+
+          <!-- 6 -->
+		 <div class="award-card">
+		  <div class="award-header">
+			<img src="honors/b54ecac55ac607b9c3ddf0b01ac0595f.jpg" class="award-logo" alt="UC logo">
+		  </div>
+
+		  <div class="award-title">Youngblood Richard Hagedorn Scholarship </div>
+		  <div class="award-org">University of Cincinnati</div>
+		  <div class="award-year">Aug 2022</div>
+
+		  <!-- Full description stays here, but is hidden until expanded -->
+		  <p class="award-desc">
+		 The Youngblood Richard Hagedorn Award, granted to students for outstanding research, recognizes exceptional dedication, hard work, and academic excellence at the University of Cincinnati. This $1,000 award honors the recipient's significant contributions to their field of study, encouraging them to continue their educational pursuits with the same level of commitment and innovation. It serves as both a recognition of past achievements and a motivation to strive for further excellence in research.
+		  </p>
+
+
+		  <!-- Toggle button -->
+		  <button type="button" class="award-toggle">Read more</button>
+		</div>
+
+
+          <!-- 7 -->
+		 <div class="award-card">
+		  <div class="award-header">
+			<img src="honors/b54ecac55ac607b9c3ddf0b01ac0595f.jpg" class="award-logo" alt="UC logo">
+		  </div>
+
+		  <div class="award-title">Graduate Incentive Award</div>
+		  <div class="award-org">University of Cincinnati</div>
+		  <div class="award-year">Aug 2021</div>
+
+		  <!-- Full description stays here, but is hidden until expanded -->
+		  <p class="award-desc">
+		  The Graduate Incentive Scholarship provides financial support for Ph.D. and Master's students, covering tuition costs to encourage and enable advanced research and academic excellence. This scholarship is awarded to students who demonstrate outstanding potential and dedication in their respective fields, helping them to focus on their studies and research without the burden of financial constraints. 
+		  </p>
+		  		  <!-- Toggle button -->
+		  <button type="button" class="award-toggle">Read more</button>
+		</div>
+
+          <!-- 8 -->
+		 <div class="award-card">
+		  <div class="award-header">
+			<img src="honors/efb808df25b8cbb23839f2f78a7a8fa0.jpg" class="award-logo" alt="UC logo">
+		  </div>
+
+		  <div class="award-title">Outstanding Research Article (JUAAN) </div>
+		  <div class="award-org"> Japanese Universities Alumni Association, Nepal (JUAAN)  </div>
+		  <div class="award-year">Jun 2021</div>
+
+		  <!-- Full description stays here, but is hidden until expanded -->
+		  <p class="award-desc">
+		 The Imanishi Trust Fellowship recognizes outstanding contributions to the academic and cultural exchange between Nepal and Japan. This prestigious award is given to individuals whose research and publications significantly enhance the understanding and relationship between the two countries. It highlights the importance of scholarly work in promoting cross-cultural ties and acknowledges the recipients' dedication to advancing knowledge and fostering international collaboration. The fellowship, managed by JUAAN with support from the Japanese Embassy, underscores the value of exceptional academic achievements in strengthening the longstanding Nepal-Japan partnership.
+		  </p>
+		  		  <!-- Toggle button -->
+		  <button type="button" class="award-toggle">Read more</button>
+		</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    © <span id="year"></span> Manish Raj Aryal. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
+  <script>
+	  // Toggle description visibility per award card
+	document.querySelectorAll(".award-card").forEach(card => {
+	  const btn = card.querySelector(".award-toggle");
+	  const desc = card.querySelector(".award-desc");
+	  if (!btn || !desc) return;
+
+	  btn.addEventListener("click", () => {
+		const expanded = card.classList.toggle("expanded");
+		btn.textContent = expanded ? "Show less" : "Read more";
+	  });
+	});
+
+</script>
+</body>
+</html>

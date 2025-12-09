@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About – Manish Raj Aryal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="About page for Manish Raj Aryal – Graduate Researcher and PhD student at the University of Cincinnati." />
+
+  <style>
+    /* ===== Base ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #333;
+      background-color: #f7f7f7;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 2.8rem 0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 1.6rem;
+      font-weight: 600;
+      color: #0c5e8a;
+    }
+
+    /* ===== Header & Nav (same style as index) ===== */
+    header.site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e3e3e3;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo a {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #222;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .nav-list > li > a {
+      font-size: 0.95rem;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-list > li > a:hover,
+    .nav-list > li > a.active {
+      border-bottom-color: #226e93;
+      color: #226e93;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a::after {
+      content: " ▾";
+      font-size: 0.8rem;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      min-width: 240px;
+      background: #ffffff;
+      border: 1px solid #e3e3e3;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      list-style: none;
+      padding: 0.4rem 0;
+      display: none;
+      z-index: 200;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f1f6f9;
+      color: #226e93;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* ===== About layout ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .about-lead {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0c5e8a;
+      margin-bottom: 1rem;
+    }
+
+    .about-paragraph {
+      font-size: 0.98rem;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .about-highlight {
+      font-weight: 600;
+      color: #0c5e8a;
+    }
+
+    .about-image,
+    .about-cv-image {
+      border-radius: 12px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .about-cv-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.2rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .cv-link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: #2a7b25;
+      font-weight: 600;
+    }
+
+    .cv-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid #e3e3e3;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      background: #ffffff;
+      margin-top: 2rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .about-grid,
+      .about-cv-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-list {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: flex-end;
+        font-size: 0.9rem;
+      }
+    }
+	/* --- ABOUT SLIDER: Equal-height images --- */
+	.about-slider {
+	  position: relative;
+	  overflow: hidden;
+	  border-radius: 14px;
+	  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+	  height: 350px; /* 🔥 SAME HEIGHT FOR ALL IMAGES */
+	}
+
+	.about-slide {
+	  display: none;
+	  width: 100%;
+	  height: 100%;
+	}
+
+	.about-slide.active {
+	  display: block;
+	}
+
+	.about-slide img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover; /* 🔥 Keeps perfect uniformity */
+	  border-radius: 14px;
+	}
+
+	/* Dots */
+	.about-dots {
+	  display: flex;
+	  justify-content: center;
+	  gap: 0.4rem;
+	  margin-top: 0.6rem;
+	}
+
+	.about-dot {
+	  width: 9px;
+	  height: 9px;
+	  border-radius: 50%;
+	  background: #c4ced6;
+	  cursor: pointer;
+	}
+
+	.about-dot.active {
+	  background: #226e93;
+	}
+
+	/* --- CV BUTTON (High Impact) --- */
+	.cv-button {
+	  display: inline-block;
+	  background: #226e93;
+	  color: #fff;
+	  padding: 0.8rem 1.6rem;
+	  font-size: 1.05rem;
+	  font-weight: 600;
+	  border-radius: 50px;
+	  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+	  transition: all 0.2s ease;
+	  margin-top: 1rem;
+	}
+
+	.cv-button:hover {
+	  background: #174e6c;
+	  transform: translateY(-3px);
+	  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+	}
+
+
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header / Navigation ===== -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <div class="logo">
+        <a href="index.html">Manish Raj Aryal</a>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About Me</a></li>
+          <li><a href="research.html">Research Works</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="honors.html">Honors and Awards</a></li>
+          <li class="dropdown">
+            <a href="Data Visualization Projects.html">Data Visualization Projects</a>
+            <ul class="dropdown-menu">
+              <li><a href="Project 1 Exoplanet Archive - NASA.html">Project 1: Exoplanet Archive – NASA</a></li>
+              <li><a href="Project 2 311 calls in Cincinnati.html">Project 2: 311 Calls in Cincinnati</a></li>
+              <li><a href="Project 3 TV Time.html">Project 3: TV Time</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main>
+    <!-- Top about section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Adroit, Hardworking &amp; Problem Solving Abilities</h2>
+
+        <div class="about-grid">
+          <!-- LEFT: text -->
+          <div>
+            <p class="about-paragraph">
+              I am a Graduate Student working as a Research Assistant at the University of Cincinnati.
+              I have collaborated with academic and industrial partners on R&amp;D projects across
+              digital manufacturing, artificial intelligence, and simulation.
+            </p>
+            <p class="about-paragraph">
+              I am a skilled computer-aided designer
+              (<span class="about-highlight">SolidWorks, Unreal Engine, Unity, Blender, Siemens NX</span>),
+              an efficient software developer
+              (<span class="about-highlight">Python, C, C++, C#, JavaScript, TypeScript, MySQL</span>),
+              and a computational algorithm developer
+              (<span class="about-highlight">MATLAB, NX Open API</span>).
+            </p>
+            <p class="about-paragraph">
+              My research focuses on integrating machine learning, generative AI, and digital twins
+              to build intelligent, human-centered manufacturing systems.
+            </p>
+          </div>
+
+          <!-- RIGHT: presentation image -->
+		  
+		  		  
+		  <!-- RIGHT: slider with two images -->
+		  
+		  <div>
+  <div class="about-slider">
+    <div class="about-slide active">
+      <img
+        src="about/566bd102c4ff62d5e3f40592b7df7152.jpg"
+        alt="Manish presenting research on voice translation and LLM-based AI assistant"
+      />
+    </div>
+    <div class="about-slide">
+      <img
+        src="about/37cfd531ce013b33aa1b76ade83f9df1.jpg"
+        alt="Manish presenting or collaborating in another research setting"
+      />
+    </div>
+  </div>
+
+
+		  <div class="about-dots">
+			<div class="about-dot active" data-index="0"></div>
+			<div class="about-dot" data-index="1"></div>
+		  </div>
+		</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV & contact section -->
+    <section class="section">
+      <div class="container">
+        <div class="about-cv-grid">
+          <!-- LEFT: text + links -->
+          <div>
+            <p class="about-paragraph">
+              Know more about my academic background, research experiences, projects, and skills.
+            </p>
+            <p class="about-paragraph">
+              You can explore my curriculum vitae and connect with me for collaboration, internships,
+              and full-time opportunities in AI, digital manufacturing, and intelligent systems.
+            </p>
+
+            <!-- 🔁 update href to your actual CV file name -->
+            <a class="cv-button" href="about/Manish_Curriculum_Vitae_Final.pdf" target="_blank">
+              View my CV (PDF)
+            </a>
+            <br />
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    © <span id="year"></span> Manish Raj Aryal. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
+  <script>
+  // Slider for about images
+  const aboutSlides = document.querySelectorAll(".about-slide");
+  const aboutDots = document.querySelectorAll(".about-dot");
+
+  aboutDots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      const idx = Number(dot.getAttribute("data-index"));
+
+      aboutSlides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === idx);
+      });
+      aboutDots.forEach((d, i) => {
+        d.classList.toggle("active", i === idx);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
